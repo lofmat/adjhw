@@ -1,0 +1,52 @@
+Task #1
+Please go to https://en.wikipedia.org/w/index.php?search and do some
+exploratory testing.
+At the end of your test please create a brief Exploratory Test Charter.
+Remember that a comprehensive test is not only about functionality.
+Feel free to advise on the possible improvements, not just the bugs.
+
+# Charter
+    Testing of Wiki search form https://en.wikipedia.org/w/index.php?search
+
+# Testers
+    Ilia Suntcov
+
+# Task Breackdown
+    Start date: 18:00 14.02.2022
+    Test design and execution: 40 min
+    Bug investigation and reporting: 15 min
+    Session setup: 10 min
+    Charter vs. Opportunity: 100/0
+
+# Environment
+    Browser: Version 96.0.4664.93 (Official Build) (64-bit)
+
+# Target or Scope:
+    Wiki search form https://en.wikipedia.org/w/index.php?search
+    Search forms on the other pages are out of scope.
+    Features:
+    - Search with default parameters
+    - Advanced search (search in page text, structure, files and images, sorting order)
+    - Search in (some namespace)
+
+# Test notes
+- Pass 'Berlin Wall' and press Search button. Check if the first and other random page contain matches with 'Berlin Wall'. On the right side I see "Results 1 - [current value of pagination] of [total amount of articles]" 
+- Сhange pagination sequentially from 20 (default) to 50, 100, 250, 500. Check if number of articles changed.
+- Input an arbitrary sequence of characters. Suggestion to create an article.
+- Input "Hertha". Advanced -> These words -> "Olympiastadion". Expect the official article about football club but I see that page does not exist. Bug #1
+- Input "Hertha". Advanced -> Exactly this text -> "Nerthus". Expect the official article about football club but but I see that page does not exist. Bug #2
+- Input "Hertha". Advanced -> Not these words -> "Berlin". Result set is correct.
+- Input "Hertha". Advanced -> One of these words -> "Burchert OR Gechter". Result set is correct. But in the search line I see several repetitions of OR (reproduction rate is approx 20%). Bug #3.
+- Input "Hertha". Advanced -> Page title contains -> "won". Result set is correct.
+- Input "Hertha". Search in -> Uncheck all boxes. Result search contain all articles as if 'Search in' has 'Default' value. Bug #4.
+- Input "Hertha". Search in -> Check Discussion. Correct result.
+- Search in. Check and uncheck boxes. Categories have been changed but "General Help" cannot be used without "Default". Bug #5
+- Search in. Check "Discussion" + "Remember selection for future searches". Change phrase in search box, press Search (result is correct) and then check if "Remember selection for future searches" is still checked. It isn't. Possible Bug #6.
+
+# Bugs
+Bug #1. Input "Hertha". Advanced -> These words -> "Olympiastadion". Expect the official article about football club but I see that page does not exist.
+Bug #2. Input "Hertha". Advanced -> Exactly this text -> "Nerthus". Expect the official article about football club but but I see that page does not exist.
+Bug #3. Input "Hertha". Advanced -> One of these words -> "Burchert OR Gechter". Result set is correct. But in the search line I see several repetitions of OR (reproduction rate is approx 20%).
+Bug #4. Input "Hertha". Search in -> Uncheck all boxes. Result search contain all articles as if 'Search in' has 'Default' value.
+Bug #5. Search in. Check and uncheck boxes. Categories have been changed but "General Help" cannot be used without "Default".
+Bug #6. Search in. Check "Discussion" + "Remember selection for future searches". Change phrase in search box, press Search (result is correct) and then check if "Remember selection for future searches" is still checked. It isn't.

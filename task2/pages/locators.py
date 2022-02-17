@@ -1,0 +1,6 @@
+INPUT_FIELD = "ooui-php-1"
+SUBMIT_BUTTON = "//button[@type='submit']"
+ADVANCED_SEARCH = "div.mw-advancedSearch-searchPreview"
+SEARCH_RESULT = "div.searchresults"
+JPG_IMG = "//span[text()='jpg']"
+DOC_TYPE = "advancedSearchField-filetype"
