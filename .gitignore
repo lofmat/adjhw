@@ -8,6 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+.idea
 build/
 develop-eggs/
 dist/
@@ -131,4 +132,7 @@ dmypy.json
 # Nested pycache
 task2/__pycache__/
 task3/__pycache__/
+task2/.pytest_cache
+task3/.pytest_cache
+
 
